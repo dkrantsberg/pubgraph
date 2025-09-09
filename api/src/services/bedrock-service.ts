@@ -14,11 +14,6 @@ export class BedrockService {
   constructor() {
     this.client = new BedrockRuntimeClient({
       region: process.env.AWS_REGION || 'us-east-1',
-      // AWS SDK will automatically use credentials from:
-      // 1. Environment variables (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY)
-      // 2. IAM roles (if running on EC2)
-      // 3. AWS credentials file
-      // 4. Other credential providers in the chain
     });
 
     this.modelId = process.env.BEDROCK_MODEL_ID || 'us.anthropic.claude-sonnet-4-20250514-v1:0';
